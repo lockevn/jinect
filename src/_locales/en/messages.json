@@ -1,0 +1,27 @@
+{
+  "NAME": {
+    "message": "Jinect",
+    "description": "SYSTEM_USE"
+  },
+
+  "OMNIBOX_KEYWORD": {
+    "message": "jinect",
+    "description": "SYSTEM_USE"
+  },
+
+  "description": {
+    "message": "Use your gesture in the air to command your browser"
+  },
+
+
+  //////////////////////////////////////////
+  //////////////////////////////////////////
+  //////////////////////////////////////////
+  "lblSelectDictionary": {
+    "message": "Select working dictionary"
+  },
+  "lblStatus": {
+    "message": "Working status"
+  }
+
+}

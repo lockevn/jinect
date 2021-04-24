@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Jinect Hackday April</title>
+	<link rel="stylesheet" href="styles/popup.css"/>
+</head>
+<body class='debug'>
+
+<iframe id='viewer' src="http://episerver.com"
+seamless frameBorder=0 scrolling=no allowTransparency=true marginheight="0" marginwidth="0" >
+</iframe>
+
+
+<div id='support'>
+    <!--<device type="media"></device>-->
+    <!--You need a simple video tag to receive the user’s webcam feed. Don’t forget to set the autoplay property. Without it, the stream pauses on the first frame received.
+    The video tag will actually not be displayed. Its css display style is set to none. Instead, draw the stream received in a canvas so I can use it for the motion detection. Create the canvas to draw the webcam stream:-->
+    <video id="webcam" autoplay width="640" height="480"></video>
+
+    <!--blend video to detect edge from webcam-->
+    <canvas id="canvasBlended" width="640" height="480"></canvas>
+
+    <!--original video from webcam-->
+    <canvas id="canvasSource" width="640" height="480"></canvas>
+
+
+    <!--The kinetic action bar-->
+    <div id="kineticbar">
+		<img id="actionUI0" src="images/actionUI0.png" data-job='FULLSCREEN'/>
+		<img id="actionUI1" src="images/actionUI1.png" data-job='REFRESH'/>
+		<img id="actionUI2" src="images/actionUI2.png" data-job='EXITFULLSCREEN'/>
+    </div>
+    <!--The kinetic action bar-->
+</div>
+
+<div id="notsupport" style="display:none; ">
+	<p>Please view this page using <mark><a href="http://tools.google.com/dlpage/chromesxs" target="_blank">Google Chrome Canary</a></mark> and enable the "Media Stream" flag in <mark>about:flags</mark></p>
+	<img src="images/enablemediastream.png"/>
+</div>
+
+<div id="message"></div>
+
+<script type="text/javascript" src="js/libs/share.js"></script>
+<script type="text/javascript" src="js/libs/jquery.min.js"></script>
+<script type="text/javascript" src="js/libs/buffer-loader.js"></script>
+<script type="text/javascript" src="js/popup.js"></script>
+
+</body>
+</html>

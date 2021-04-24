@@ -1,0 +1,7 @@
+#_Jinect_Container{position:fixed;top:0;left:0;right:0;height:0;text-align:center;}#_Jinect_Container.DEBUG{opacity:0.5;}
+#_Jinect_Container>.KinectBar{display:inline-block;text-align:left;width:100%;height:70px;background-color:rgba(3, 3, 3, 0.3);border:none;box-shadow:0px 5px 25px 10px rgba(3, 3, 3, 0.3);color:white;z-index:5555;overflow:hidden;}#_Jinect_Container>.KinectBar .actionUIButton{width:210px;height:70px;display:inline-block;}
+#_Jinect_Container>.KinectBar #actionUI0{background-image:url("chrome-extension://__MSG_@@extension_id__/images/actionUI0.png");}
+#_Jinect_Container>.KinectBar #actionUI1{background-image:url("chrome-extension://__MSG_@@extension_id__/images/actionUI1.png");}
+#_Jinect_Container>.KinectBar #actionUI2{background-image:url("chrome-extension://__MSG_@@extension_id__/images/actionUI2.png");}
+#_Jinect_Container *{font:12px Arial !important;font-family:Arial !important;font-size:12px !important;}
+#_Jinect_Container #message{position:fixed;right:0;top:0;font:20px Verdana !important;font-family:Verdana !important;font-size:20px !important;color:LightGreen;}

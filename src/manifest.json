@@ -1,0 +1,108 @@
+/////////////////////////////////////
+// Chrome extension manifest
+/////////////////////////////////////
+{
+  "manifest_version": 2,
+  "default_locale": "en",
+  "minimum_chrome_version": "21",
+  // from 21, we have getUserMedia() API
+  "name": "__MSG_NAME__",
+  "description": "__MSG_description__",
+  "version": "0.2.1",
+  "author": "LockeVN",
+  // "update_url": "http://dl.dropbox.com/u/767245/ChromeWebStore/updates.xml",
+  "homepage_url": "http://lockevn.wordpress.com",
+  // website of Author, show in Extensions panel
+
+  "icons": {
+    "16": "images/icon16.png",
+    "48": "images/icon48.png",
+    "128": "images/icon128.png"
+  },
+
+  /* An array of strings specifying the paths (relative to the package root) of packaged resources that are expected to be usable in the context of a web page. 
+  For example, an extension that injects a content script with the intention of building up some custom interface for example.com 
+  would whitelist any resources that interface requires (images, icons, stylesheets, scripts, etc.) as follows: */
+  /* These resources would then be available in a webpage via the URL chrome-extension://[PACKAGE ID]/[PATH], which can be generated with the chrome.extension.getURL method  */
+  "web_accessible_resources": [
+  "contentInjection.html", 
+  "images/icon128.png", 
+  "images/actionUI0.png", 
+  "images/actionUI1.png", 
+  "images/actionUI2.png", 
+  
+  "sounds/note0.mp3", 
+  "sounds/note1.mp3", 
+  "sounds/note2.mp3", 
+  
+  "style/double-rainbow.css", 
+  "script/double-rainbow.js"
+  ],
+
+  /////////////////////////////////////////
+  // icon in the Chrome's action bar
+  /////////////////////////////////////////
+  "browser_action": {
+    "name": "__MSG_NAME__",
+    "default_icon": { // optional
+      "19": "images/icon19.png",
+      // optional
+      "38": "images/icon48.png" // optional
+    },
+    "default_title": "__MSG_NAME__",
+    // optional; shown in tooltip
+    "default_popup": "popup.html" // optional
+  },
+
+
+  /////////////////////////////////////////
+  // icon in the Chrome's action bar
+  // "omnibox": { "keyword" : "__MSG_OMNIBOX_KEYWORD__" }, // capture the key in omnibox (bar) to run command of this extension
+  "background": {
+    "scripts": ["js/global.js", "js/libs/extension.js", "js/background.js"],
+    "persistent": false
+  },
+
+  // "options_page": "options_page.html",  //
+  "permissions": ["tts"
+  // , "unlimitedStorage"
+  , "notifications"
+  // , "contextMenus"
+  // , "background"
+  ,
+  "tabs" //  also must be able to use the chrome.tabs module. For injecting script and css on click of ExtensionIcon
+  ,
+  "http://*/*" // cross origin permission. For injecting script and css on click of ExtensionIcon
+  ,
+  "https://*/*" // cross origin permission. For injecting script and css on click of ExtensionIcon
+  ],
+  // "content_security_policy": "script-src 'self' https://ajax.googleapis.com; object-src 'self'",
+  // inject to the viewing (content) page
+  "content_scripts": [{
+    "all_frames": true,
+    // inject to all frames (all tab, all url) so we can translate everywhere
+    "css": ["styles/contentstyle.css"],
+    "js": [
+      "js/libs/jquery.min.js", 
+      "js/global.js", 
+      "js/libs/share.js", "js/libs/extension.js", 
+      "js/libs/buffer-loader.js", 
+      "js/contentscript/1.js" // main js file
+      ],
+    
+    /* Content scripts execute in a special environment called an isolated world. 
+      They have access to the DOM of the page they are injected into, but not to any JavaScript variables or functions created by the page. 
+      It looks to each content script as if there is no other JavaScript executing on the page it is running on. 
+      The same is true in reverse: JavaScript running on the page cannot call any functions or access any variables defined by content scripts.
+      
+      Isolated worlds allow each content script to make changes to its JavaScript environment 
+      without worrying about conflicting with the page or with other content scripts. 
+      For example, a content script could include JQuery v1 and the page could include JQuery v2, and they wouldn't conflict with each other.
+      */
+
+    "matches": ["https://*/*", "http://*/*", "file:///*"],
+    // allow all url, both http and https, and local files
+    "run_at": "document_end" // inject to the end of document (so it does not block page loading)
+  }]
+
+}

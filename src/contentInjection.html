@@ -1,0 +1,28 @@
+﻿<div class="KinectBar">
+    <!--The kinetic action bar-->
+    <div id="actionUI0" class="actionUIButton" data-job='SCROLLUP'>
+    </div>
+    <div id="actionUI1" class="actionUIButton" data-job='NOTHING'>
+    </div>
+    <div id="actionUI2" class="actionUIButton" data-job='SCROLLDOWN'>
+    </div>
+    <!--The kinetic action bar-->
+
+<span id="message"></span>
+<!--blend video to detect edge from webcam-->
+<canvas id="canvasBlended" width="640" height="480"></canvas>
+<!--You need a simple video tag to receive the user’s webcam feed. 
+            Don’t forget to set the autoplay property. 
+            Without it, the stream pauses on the first frame received.
+
+            The video tag will actually not be displayed. 
+            Its css display style is set to none. 
+            Instead, draw the stream received in a canvas so I can use it for the motion detection. 
+            Create the canvas to draw the webcam stream:
+            -->
+<video id="webcam" autoplay width="640" height="480"></video>
+
+<!--original video from webcam-->
+<canvas id="canvasSource" width="640" height="480"></canvas>
+
+</div>

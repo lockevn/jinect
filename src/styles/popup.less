@@ -1,0 +1,35 @@
+/*<body>*//*<style>*/ 
+
+// in content_scripts, we can escape and use predefined __MSG_@@extension_id__ , so we can use local resources (css, js, images)
+@extensionId : ~"__MSG_@@extension_id__";
+            
+@RoundingColor: white;
+@InlineBackGroundColor: RGBA(3,3,3, 0.6);
+@InlineTextColor: white;
+@InlinePadding: 10px;
+@ZIndex: 5555;
+
+html, body {    /* to resize the popup window, we need to set for both html and body */
+    width: 300px;
+    height: auto;
+
+    font-family: Helvetica, Arial, "sans serif";
+	font-size: 12px;
+	margin: 0;
+	padding: 0;
+}
+
+
+#_Jinect_Container
+{   
+    /* fixed position a zero-height full width container */
+    position: fixed;
+    top: 0; /* or whatever position is desired */
+    left: 0;
+    right: 0;
+    height: 0;
+    /* center all inline content */
+    text-align: center;
+}
+
+/*</style>*//*</body> */

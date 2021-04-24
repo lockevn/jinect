@@ -1,0 +1,80 @@
+/*<body>*//*<style>*/ 
+
+// in content_scripts, we can escape and use predefined __MSG_@@extension_id__ , so we can use local resources (css, js, images)
+@extensionId : ~"__MSG_@@extension_id__";
+            
+@RoundingColor: white;
+@InlineBackGroundColor: RGBA(3,3,3, 0.3);
+@InlineTextColor: white;
+@InlinePadding: 10px;
+@ZIndex: 5555;
+@ActionUIButtonHeight: 70px;
+
+#_Jinect_Container
+{   
+    /* fixed position a zero-height full width container */
+    position: fixed;
+    top: 0; /* or whatever position is desired */
+    left: 0;
+    right: 0;
+    height: 0;
+    /* center all inline content */
+    text-align: center;
+
+    &.DEBUG{
+        opacity: 0.5;
+    }
+        
+    > .KinectBar {
+        /* make the block inline */
+        display: inline-block;
+        /* reset container's center alignment */
+        text-align: left;
+
+        width: 100%;
+        height: @ActionUIButtonHeight;
+
+        background-color: @InlineBackGroundColor;
+        border: none;
+        box-shadow: 0px 5px 25px 10px @InlineBackGroundColor;
+    
+        color: @InlineTextColor;
+        z-index: @ZIndex;
+        overflow: hidden;
+
+
+        .actionUIButton{
+            width: 210px;
+            height: @ActionUIButtonHeight;
+            display: inline-block;
+        }
+        #actionUI0 {
+            background-image: url("chrome-extension://@{extensionId}/images/actionUI0.png");
+        }
+        #actionUI1 {
+            background-image: url("chrome-extension://@{extensionId}/images/actionUI1.png");
+        }
+        #actionUI2 {
+            background-image: url("chrome-extension://@{extensionId}/images/actionUI2.png");
+        }
+    } 
+        
+    * {
+        font: 12px Arial !important;
+        font-family: Arial !important;
+        font-size: 12px !important;  
+    }
+    
+    #message{
+        position: fixed;
+        right: 0;
+        top: 0;
+
+        font: 20px Verdana !important;
+        font-family: Verdana !important;
+        font-size: 20px !important; 
+        color: LightGreen;
+    }
+}
+
+/*</style>*//*</body>*/

@@ -1,0 +1,34 @@
+﻿<!doctype html>
+<html>
+<head>
+<title>Options</title>
+<link rel="stylesheet" href="styles/options.css" type="text/css" media="screen" charset="utf-8">
+</head>
+
+<body>
+<div id='_TuDienGuru_Option' class='container'>
+    <img src="images/icon128.png" />
+    <h1 id='lblMainHeading'></h1>
+    <h4 id='lblMainDesc'></h4>
+
+    <div>
+        <label id='lblSelectDictionary'></label>
+        <select id="dictionary">
+            <option value="en-vi">Anh - Việt</option>
+            <option value="vi-en">Việt - Anh</option>
+        </select>
+    </div>
+    <div>
+        <label id='lblStatus' for='status'></label><input type='checkbox' id='status' checked='checked' />
+    </div>
+</div>
+</body>
+
+<script src="js/libs/jquery.min.js"></script>
+<script src="js/libs/extension.js"></script>
+<script src="js/options_page.js"></script>
+
+<!--<script type="text/javascript">
+TECHNOTE: Apparently manifest v2 does not allow you to have inline scripts, so you just need to
+</script>-->
+</html>

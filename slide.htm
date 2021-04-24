@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+
+<!--
+  Google HTML5 slide template
+
+  Authors: Luke Mahé (code)
+           Marcin Wichary (code and design)
+           
+           Dominic Mazzoni (browser compatibility)
+           Charles Chen (ChromeVox support)
+
+  URL: http://code.google.com/p/html5slides/
+-->
+
+<html>
+  <head>
+    <title>Jinect Presentation</title>
+    <meta charset='utf-8'>
+    <script
+      src='http://html5slides.googlecode.com/svn/trunk/slides.js'></script>
+  </head>
+  <style>
+    /* Your individual styles here, or just use inline styles if that’s
+       what you want. */
+       .episerver .slides.template-default > article:not(.nobackground):not(.biglogo) {
+              background: url(slide/logo-small.png) 510px 625px no-repeat;
+              background-color: white;
+            }
+
+            .episerver h1, .episerver h2, .episerver h3  {
+              color: white;
+              background-color: rgba(0, 0, 0, 0.8);
+
+              font-size: 45px;
+              font-weight: 600;
+              line-height: 45px;
+              letter-spacing: -2px;
+              position: absolute;
+              left: 0;
+              bottom: 150px;
+              padding: 30px 60px;
+              margin: 0;
+              width: 100%;
+              box-shadow: 0 1px 5px #333;
+              box-sizing: border-box;
+
+            }
+  </style>
+
+  <body style='display: none' class='episerver'>
+    <section class='slides layout-regular template-default'>
+      <!-- Your slides (<article>s) go here. Delete or comment out the
+           slides below. -->
+
+      <article>
+        <h1>
+          Jinect
+        </h1>
+        <p>
+          LockeVN
+          <br>
+          Thursday 21rd, November, 2012
+        </p>
+      </article>
+   
+      <article>
+        <h1>
+        Javascript<br />
+        Chrome (from 21)<br />
+        Chrome up to date version is 23<br />
+        Webcam
+        </h1>
+      </article>
+
+        
+      <article class='fill'>
+        <h1>
+          Debug
+        </h1>
+        <p>
+          <img src='slide/debug.png'>
+        </p>
+      </article>
+
+      <article class='fill'>
+        <h1>
+          Live
+        </h1>
+        <p>
+          <img src='slide/live.png'>
+        </p>
+      </article>
+      
+
+      <article>
+        <h1>
+        Chrome official version <br />
+        Support accessing webcam
+        </h1>
+        <p>auto allow with https:// url</p>
+        <p>need to allow with normal site</p>
+      </article>
+
+      <article>
+        <h1>
+        HTML5
+        </h1>
+        <p>Canvas</p>
+        <p>CSS Filter (HTML5), see <a href="http://html5-demos.appspot.com/static/getusermedia/photobooth.html#">here</a></p>
+        <p>navigator.getUserMedia</p>
+        <p>Audio API</p>
+      </article>
+
+      <article class='fill'>
+        <h2>
+          Webcam on our monitor
+        </h2>
+        <p>
+          <img src='http://c1.neweggimages.com/NeweggImage/productimage/24-236-043-04.jpg'>
+        </p>
+      </article>
+      
+      <article class='fill'>
+        <h2>
+          Microsoft Kinect
+        </h2>
+        <p>
+          <img src='http://gamerinvestments.com/video-game-stocks/wp-content/uploads/2010/08/harry-potter-deathly-hallows-kinect-screens.jpg'>
+        </p>
+      </article>
+
+      
+      <article class='smaller'>
+        <h3>
+          Some "stupid spaghetti pizza lolotica" blending algorithm
+        </h3>
+        <section>
+        <pre>
+    function differenceAccuracy(target, data1, data2) {
+        if (data1.length != data2.length) return null;
+        var i = 0;
+        while (i < (data1.length * 0.25)) {
+            var average1 = (data1[4 * i] + data1[4 * i + 1] + data1[4 * i + 2]) / 3;
+            var average2 = (data2[4 * i] + data2[4 * i + 1] + data2[4 * i + 2]) / 3;
+            var diff = threshold(fastAbs(average1 - average2));
+            target[4 * i] = diff;
+            target[4 * i + 1] = diff;
+            target[4 * i + 2] = diff;
+            target[4 * i + 3] = 0xFF;
+            ++i;
+        }
+    }
+</pre>
+        </section>
+      </article>
+      
+      <article>
+        <h1>
+        Future
+        </h1>
+        <p>Now is the <strong>Chrome Extension</strong>, has more abilities</p>
+        <p>XSS</p>
+        <p>Voice</p>
+        <p>Speed</p>
+        <p>Native API</p>
+      </article>
+
+      <article>
+        <q>
+          Life is so short, let's go for doing some <br />'even stupid' thing.
+        </q>
+        <div class='author'>
+          Pretend to be dangerous<br />
+          Smoking<br />
+          Go for Hackday<br />
+        </div>
+      </article>
+      
+      <!--<article class='fill'>
+        <h3>
+          Full-slide embed with (optional) slide title on top
+        </h3>
+        <iframe src='http://www.google.com/doodle4google/history.html'></iframe>
+      </article>-->
+
+      
+      <article>
+        <q>
+          Thank you my references!
+        </q>
+        <p>
+          http://www.xarg.org/project/jquery-webcam-plugin/ <br />
+          http://www.adobe.com/devnet/html5/articles/javascript-motion-detection.html?utm_source=html5weekly&utm_medium=email <br />
+          http://code.google.com/p/jpegcam/
+        </p>
+      </article>
+
+
+      
+      <article>
+        <q>
+          Thank you EPiServer!
+        </q>
+        <div class='author'>
+          for giving me triple Hackday
+        </div>
+      </article>
+
+      <article>
+        <q>
+          Thank you, Gee!
+        </q>
+        <div class='author'>
+          for listen to me a while
+        </div>
+      </article>
+
+
+      <article>
+        <q>
+          Go for some <a href="sample.htm" >sample </a>
+        </q>
+        <div class='author'>
+          OK?
+        </div>
+      </article>
+
+    </section>
+
+  </body>
+</html>
